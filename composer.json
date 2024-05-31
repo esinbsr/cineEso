@@ -1,0 +1,20 @@
+{
+    "name": "esin/gestion-tache",
+    "description": "gestion d'un cinema",
+    "license": "4",
+    "autoload": {
+        "psr-4": {
+            "App\\" : "App/",
+            "Controllers\\": "App/controllers/",
+            "Models\\": "App/models/",
+            "Views\\": "App/views/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Esin",
+            "email": "hokablese@gmail.com"
+        }
+    ],
+    "require": {}
+}

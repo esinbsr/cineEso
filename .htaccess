@@ -1,0 +1,25 @@
+RewriteEngine On
+# Ligne pour éviter la réécriture si un fichier ou un dossier existe avec ce nom
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirection pour l'accès à 'movies'
+RewriteRule ^movies$ index.php?action=movies [L,QSA]
+
+# Redirection pour l'accès à 'moviesDetails'
+RewriteRule ^moviesDetails$ index.php?action=moviesDetails [L,QSA]
+
+# Redirection pour l'accès à 'moviesDetails/id'
+RewriteRule ^moviesDetails/([0-9]+)$ index.php?action=moviesDetails&movieId=$1 [L,QSA]
+
+# Redirection pour l'accès à 'series'
+RewriteRule ^series$ index.php?action=series [L,QSA]
+
+# Redirection pour l'accès à 'animation'
+RewriteRule ^animation$ index.php?action=animation [L,QSA]
+
+# Redirection pour l'accès à 'register'
+RewriteRule ^register$ index.php?action=register [L,QSA]
+
+# Redirection pour l'accès à 'login'
+RewriteRule ^login$ index.php?action=login [L,QSA]
