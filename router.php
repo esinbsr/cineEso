@@ -6,10 +6,14 @@ use Controllers\MoviesController;
 use Controllers\MoviesDetailsController;
 use Controllers\AnimationsController;
 use Controllers\RegisterController;
+use Controllers\LoginController;
 
 $action = $_REQUEST['action'] ?? NULL;
 
 switch($action) {
+    default: 
+    echo "Bienvenue sur EsoCine";
+break;
     
     case 'movies': 
         $movies = new MoviesController();
@@ -46,11 +50,23 @@ switch($action) {
 
 
         case 'login' :
-            echo 'login';
+            $login = new LoginController;
+            if($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $login->loginModel();
+            } else {
+                $login->loginView();
+            }
+        break;
+
+        case 'logout':
+            $loginLogout = new LoginController();
+            $loginLogout->logout();
+        break;   
+
+        case 'account' :
+            echo 'my account';
         break;
     
 
-    default: 
-        echo "Page par défaut";
-    break;
+  
 }

@@ -23,3 +23,9 @@ RewriteRule ^register$ index.php?action=register [L,QSA]
 
 # Redirection pour l'accès à 'login'
 RewriteRule ^login$ index.php?action=login [L,QSA]
+
+# Redirection pour l'accès à 'logout'
+RewriteRule ^logout$ index.php?action=logout [L,QSA]
+
+# Redirection pour l'accès à 'account'
+RewriteRule ^account$ index.php?action=account [L,QSA]
