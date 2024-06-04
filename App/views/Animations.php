@@ -29,7 +29,7 @@ class Animations {
                             <td> '. $datas['themeAnimation'] . ' </td>
                             <td> '. $datas['release_date'] . ' </td>
                             <td> '. $datas['description'] . ' </td>
-                            <td><a id="movies-details" href="moviesDetails/' . $datas['id'] . '"> Détails</a> </td>
+                            <td><a id="movies-details" href="animationsDetails/' . $datas['id'] . '"> Détails</a> </td>
                         </tr>';
                 }
             } else {

@@ -23,10 +23,7 @@ class MoviesDetailsController {
         }
         
 
-    // Method for the model:
-        public function moviesDetailsSave() {
-            $this->moviesDetailsModel->getMoviesDetails();
-        }
+   
 
 }
 

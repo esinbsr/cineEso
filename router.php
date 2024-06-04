@@ -5,14 +5,20 @@ require_once('vendor/autoload.php');
 use Controllers\MoviesController;
 use Controllers\MoviesDetailsController;
 use Controllers\AnimationsController;
+use Controllers\AnimationsDetailsController;
 use Controllers\RegisterController;
 use Controllers\LoginController;
+use Controllers\AccountController;
+
 
 $action = $_REQUEST['action'] ?? NULL;
 
 switch($action) {
     default: 
-    echo "Bienvenue sur EsoCine";
+    if(isset($_SESSION['firstname'])) {
+
+        echo 'Hello ' . $_SESSION['firstname'] . '!';
+    }
 break;
     
     case 'movies': 
@@ -26,13 +32,21 @@ break;
         $movies->moviesDetailsForm($movieId);
     break;
 
-    case 'series': 
-        echo "Page des séries";
-    break;
 
-    case 'animation': 
+    case 'animations': 
       $animation = new AnimationsController();
       $animation-> animationView();
+    break;
+
+    case 'animationsDetails': 
+        $id_animations= $_GET['animationId'] ?? null; //$_GET['animationId'] correspond à mon url dans le htaccess
+       $animationsDetails = new AnimationsDetailsController();
+       $animationsDetails->animationsView($id_animations);
+    break;
+
+
+    case 'series': 
+        echo "Page des séries";
     break;
 
 
@@ -52,9 +66,9 @@ break;
         case 'login' :
             $login = new LoginController;
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $login->loginModel();
+                $login->userSave();
             } else {
-                $login->loginView();
+                $login->loginForm();
             }
         break;
 
@@ -64,9 +78,13 @@ break;
         break;   
 
         case 'account' :
-            echo 'my account';
+            $accountController = new AccountController();
+            $accountController->updateForm();
+            
         break;
     
-
-  
+        case 'saveUser':
+            $accountController = new AccountController();
+            $accountController->userSave();
+            break;
 }

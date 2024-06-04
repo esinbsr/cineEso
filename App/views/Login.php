@@ -4,7 +4,10 @@ namespace Views;
 
 class Login {
 
+    
+
     public function formLogin() {
+        
             echo '
                 <h2>Login</h2>
                 <form action="login" method="post">
@@ -18,6 +21,6 @@ class Login {
                     <button type="submit">Login</button>
                 </form>
             ';
-        }
-    }
 
+    }
+    }

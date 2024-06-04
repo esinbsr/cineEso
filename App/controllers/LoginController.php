@@ -1,9 +1,8 @@
 <?php
-
 namespace Controllers;
 
-use Views\Login;
 use Models\LoginModel;
+use Views\Login; 
 
 class LoginController {
 
@@ -15,22 +14,29 @@ class LoginController {
         $this->loginModel = new LoginModel;
     }
 
-    public function loginView() {
+    // view
+    public function loginForm() {
+
         $this->loginView->formLogin();
     }
 
-    public function loginModel() {
+    // model
+    public function userSave() {
         if (isset($_POST['email']) && isset($_POST['pswd'])) {
             $email = $_POST['email'];
             $password = $_POST['pswd'];
 
-            $result = $this->loginModel->getUser($email, $password);
+            $result = $this->loginModel->authenticate($email, $password);
 
             if ($result) {
-                $_SESSION['user'] = $email;
+                // Connexion réussie
+                
+                echo "Login successful!";
+                // Rediriger vers une page protégée ou le tableau de bord
                 header("Location: ?action=dashboard");
                 exit();
             } else {
+                // Connexion échouée
                 echo "Invalid email or password.";
             }
         } else {
@@ -41,7 +47,8 @@ class LoginController {
     public function logout() {
         session_unset();
         session_destroy();
-        header("Location: login");
+        header("Location: ?action=login");
         exit();
     }
 }
+?>

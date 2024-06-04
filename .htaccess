@@ -16,7 +16,10 @@ RewriteRule ^moviesDetails/([0-9]+)$ index.php?action=moviesDetails&movieId=$1 [
 RewriteRule ^series$ index.php?action=series [L,QSA]
 
 # Redirection pour l'accès à 'animation'
-RewriteRule ^animation$ index.php?action=animation [L,QSA]
+RewriteRule ^animations$ index.php?action=animations [L,QSA]
+
+# Redirection pour l'accès à 'animationDetails/id'
+RewriteRule ^animationsDetails/([0-9]+)$ index.php?action=animationsDetails&animationId=$1 [L,QSA]
 
 # Redirection pour l'accès à 'register'
 RewriteRule ^register$ index.php?action=register [L,QSA]

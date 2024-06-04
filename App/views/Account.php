@@ -4,16 +4,15 @@ namespace Views;
 
 class Account {
 
-    public function formAccount($userData = []) {
+    public function formAccount($userData = []) { //si aucun argument n'est passé à la méthode, $userData sera initialisé comme un tableau vide
 
-        $firstname = isset($userData['firstname']) ? htmlspecialchars($userData['firstname']) : '';
+        $firstname = isset($userData['firstname']) ? htmlspecialchars($userData['firstname']) : ''; //vérifie si la clé 'firstname' existe dans le tableau $userData,  SSi la clé 'firstname' existe, la valeur échappée est assignée à $firstname. Sinon, une chaîne vide ('') est assignée.
         $lastname = isset($userData['lastname']) ? htmlspecialchars($userData['lastname']) : '';
         $email = isset($userData['email']) ? htmlspecialchars($userData['email']) : '';
-        // $email = isset($userData['email']) ? htmlspecialchars($userData['email']) : '';
 
         echo '
-        <h2>Modify my account/h2>
-        <form method="post" action="">
+        <h2>Modify my account</h2>
+        <form method="post" action="?action=saveUser">
 
             <label for="firstname">Firstname</label>
             <input type="text" name="firstname" id="firstname" value="' . $firstname . '">
@@ -24,10 +23,14 @@ class Account {
             <label for="email">Email</label>
             <input type="email" name="email" id="email" value="' . $email . '">
 
-            <label for="pswd">Password</label>
-            <input type="password" name="pswd" id="pswd">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="' . $email . '">
+            
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="' . $email . '">
 
-            <button>Enregistrer</button>
+
+            <button>Save</button>
         </form>';
     }
 

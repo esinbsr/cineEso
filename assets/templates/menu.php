@@ -4,7 +4,7 @@ if(isset($_SESSION['user'])) {
     <nav>
     <a href="movies">Movies</a>
     <a href="series">Series</a>
-    <a href="animation">Animations</a>
+    <a href="animations">Animations</a>
     <a href="logout">Logout</a>
     <a href="account">My account</a>
     </nav>
