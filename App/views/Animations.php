@@ -8,7 +8,8 @@ class Animations {
     public function animations($data) {
 
         echo '
-        <h2> Animations </h2>
+        <h2 class="h2-center"> Animations </h2>
+        <div class="table">
         <table>
             <thead>
                 <tr>
@@ -37,7 +38,8 @@ class Animations {
             }
             echo '
             </tbody>
-        </table>';
+        </table>
+        </div>';
         
     }
 }

@@ -1,0 +1,30 @@
+.h2-center {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.table {
+    @include flexbox(center,center);
+}
+
+table {
+    tr {      
+        th {  
+            background-color: #9da39d;
+            padding: 10px;         
+        }
+        
+        td {
+            padding: 10px;       
+        }
+    }
+}
+
+tbody tr:nth-child(even) {
+    background-color: #b8bdba;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #b8bdba85;
+  }
+  

@@ -18,6 +18,7 @@ class MoviesModel {
 
             $test = $this->db->getConnection()->query($request)->fetchAll(\PDO::FETCH_ASSOC);
             // var_dump($test);
+           
             return $test;
 
             
@@ -25,4 +26,5 @@ class MoviesModel {
             throw new \Exception("Error fetching movies data : " . $e->getMessage());
         }
     }
+
     }

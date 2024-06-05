@@ -9,6 +9,8 @@ use Controllers\AnimationsDetailsController;
 use Controllers\RegisterController;
 use Controllers\LoginController;
 use Controllers\AccountController;
+use Controllers\SeriesController;
+use Controllers\SeriesDetailsController;
 
 
 $action = $_REQUEST['action'] ?? NULL;
@@ -21,6 +23,8 @@ switch($action) {
     }
 break;
     
+    // MOVIES
+
     case 'movies': 
         $movies = new MoviesController();
         $movies->moviesForm();
@@ -33,20 +37,31 @@ break;
     break;
 
 
+    // ANIMATIONS
+
     case 'animations': 
       $animation = new AnimationsController();
       $animation-> animationView();
     break;
 
     case 'animationsDetails': 
-        $id_animations= $_GET['animationId'] ?? null; //$_GET['animationId'] correspond à mon url dans le htaccess
+        $id_animations= $_GET['animationId'] ?? NULL; //$_GET['animationId'] correspond à mon url dans le htaccess
        $animationsDetails = new AnimationsDetailsController();
        $animationsDetails->animationsView($id_animations);
     break;
 
 
+    // SERIES
+
     case 'series': 
-        echo "Page des séries";
+        $series = new SeriesController;
+        $series->formSeries();
+    break;
+
+    case 'seriesDetails': 
+        $idSeriesDetails = $_GET['seriesId'] ?? NULL;
+        $seriesDetails = new SeriesDetailsController;
+        $seriesDetails->seriesDetailsForm($idSeriesDetails);
     break;
 
 
@@ -78,13 +93,15 @@ break;
         break;   
 
         case 'account' :
+            
             $accountController = new AccountController();
             $accountController->updateForm();
-            
         break;
-    
-        case 'saveUser':
+
+        case 'accountModify' :
+            
             $accountController = new AccountController();
             $accountController->userSave();
-            break;
+            
+        break;
 }

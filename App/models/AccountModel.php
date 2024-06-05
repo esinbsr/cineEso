@@ -18,7 +18,9 @@ class AccountModel {
             $s= $this->db->getConnection()->prepare($request);
             $s->execute([$user_id]);
             $data =  $s->fetch(\PDO::FETCH_ASSOC);
+
             return $data;
+
         } catch (\PDOException $e) {
             throw new \Exception("Error fetching users data : " . $e->getMessage());
         }
@@ -29,7 +31,9 @@ class AccountModel {
      
         try {
             $s = $this->db->getConnection()->prepare("UPDATE user SET firstname = ?, lastname = ?, email = ?, last_connection = ? WHERE id = ?");
+
             $s->execute([$firstname, $lastname, $email, $last, $user_id]);
+
             return true;
         } catch (\PDOException $e) {
             throw new \Exception("error when modifiying user: " . $e->getMessage());

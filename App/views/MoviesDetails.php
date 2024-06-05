@@ -7,7 +7,8 @@ class MoviesDetails {
     public function formMoviesDetails($data) {
 
         echo '
-        <h2>Movies details</h2>
+        <h2 class="h2-center">Movies details</h2>
+        <div class="table">
         <table>
             <thead>
                 <tr>
@@ -27,17 +28,19 @@ class MoviesDetails {
         foreach($data as $datas) {
             echo '
             <tr>
-            <td> '. $datas['title'] . ' </td>
-            <td> '. $datas['genre'] . ' </td>
-            <td> '. $datas['release_date'] . ' </td>
-            <td> '. $datas['description'] . ' </td>
-            <td> '. $datas['production'] . ' </td>
-            <td> '. $datas['realisator'] . ' </td>
-            <td> '. $datas['duration'] . ' </td>
-
-            <td><a href="movies"> back </a> </td>
-
-        </tr>';
+                <td> '. $datas['title'] . ' </td>
+                <td> '. $datas['genre'] . ' </td>
+                <td> '. $datas['release_date'] . ' </td>
+                <td> '. $datas['description'] . ' </td>
+                <td> '. $datas['production'] . ' </td>
+                <td> '. $datas['realisator'] . ' </td>
+                <td> '. $datas['duration'] . ' </td>
+                <td><a href="movies"> back </a></td>
+            </tr>
+            </tbody>
+            </table>
+            </div>';
+            
         }
     }
 }

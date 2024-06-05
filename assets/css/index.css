@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.h2-center {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table tr th {
+  background-color: #9da39d;
+  padding: 10px;
+}
+table tr td {
+  padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #b8bdba;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(184, 189, 186, 0.5215686275);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.menu a {
+  margin: 8px;
+  font-size: 1.2rem;
+}
+
+.menu-login .menu-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-login .menu-content a {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.form-account h2 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.form-account form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-account form label {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.form-account form input {
+  padding: 6px 20px;
+}
+.form-account form button {
+  margin-top: 20px;
+  padding: 4px 20px;
+}/*# sourceMappingURL=index.css.map */

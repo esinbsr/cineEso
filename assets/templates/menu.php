@@ -1,20 +1,26 @@
 <?php
-if(isset($_SESSION['user'])) {
+if(isset($_SESSION['id'])) {
     echo '
-    <nav>
-    <a href="movies">Movies</a>
-    <a href="series">Series</a>
-    <a href="animations">Animations</a>
-    <a href="logout">Logout</a>
-    <a href="account">My account</a>
+    <nav class="menu">
+        <div class="menu-content">
+            <a href="movies">Movies</a>
+            <a href="series">Series</a>
+            <a href="animations">Animations</a>
+            <a href="logout">Logout</a>
+            <a href="account">My account</a>
+        </div>
     </nav>
     ';
 } else {
     echo '
-    <nav>
-    <a href="register">Registration</a>
-    <a href="login">Login</a>
+    <div class="main-container">
+    <nav class="menu-login">
+        <div class="menu-content">
+            <a href="register">Registration</a>
+            <a href="login">Login</a>
+        </div>
     </nav>
+    </div>
     ';
 }
 ?>

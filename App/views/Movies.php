@@ -6,7 +6,8 @@ class Movies {
     public function formMovies($data) {
 
         echo '
-        <h2> Movies </h2>
+        <h2 class="h2-center"> Movies </h2>
+        <div class="table">
         <table>
             <thead>
                 <tr>
@@ -27,7 +28,9 @@ class Movies {
                             <td> '. $datas['genre'] . ' </td>
                             <td> '. $datas['release_date'] . ' </td>
                             <td> '. $datas['description'] . ' </td>
-                            <td><a id="movies-details" href="moviesDetails/' . $datas['id'] . '"> Détails</a> </td>
+
+                            <td><a href="moviesDetails/' . $datas['id'] . '"> Details</a> </td>
+                            
                         </tr>';
                 }
             } else {
@@ -35,6 +38,7 @@ class Movies {
             }
             echo '
             </tbody>
-        </table>';
+        </table>
+        </div>';
     }
 }

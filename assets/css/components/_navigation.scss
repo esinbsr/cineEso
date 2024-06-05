@@ -1,0 +1,20 @@
+.menu{
+  @include flexbox(center,center);
+  margin: 10px;
+  
+  a {
+    margin: 8px;
+    font-size: 1.2rem;
+}
+}
+
+.menu-login {
+  .menu-content {
+    // height: 100vh;
+    @include flexbox(center,center);
+    a {
+      margin: 10px;
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -10,9 +10,11 @@ class Account {
         $lastname = isset($userData['lastname']) ? htmlspecialchars($userData['lastname']) : '';
         $email = isset($userData['email']) ? htmlspecialchars($userData['email']) : '';
 
+
         echo '
+        <div class="form-account">
         <h2>Modify my account</h2>
-        <form method="post" action="?action=saveUser">
+        <form method="post" id="modify-account">
 
             <label for="firstname">Firstname</label>
             <input type="text" name="firstname" id="firstname" value="' . $firstname . '">
@@ -23,15 +25,14 @@ class Account {
             <label for="email">Email</label>
             <input type="email" name="email" id="email" value="' . $email . '">
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" value="' . $email . '">
-            
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" value="' . $email . '">
+            <button >Save</button>
+        </form>
+        </div>
+        
+       <script src="./assets/js/modifyAccount.js"></script>;';
 
-
-            <button>Save</button>
-        </form>';
+    
     }
+
 
 }

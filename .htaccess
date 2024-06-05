@@ -12,14 +12,19 @@ RewriteRule ^moviesDetails$ index.php?action=moviesDetails [L,QSA]
 # Redirection pour l'accès à 'moviesDetails/id'
 RewriteRule ^moviesDetails/([0-9]+)$ index.php?action=moviesDetails&movieId=$1 [L,QSA]
 
-# Redirection pour l'accès à 'series'
-RewriteRule ^series$ index.php?action=series [L,QSA]
-
 # Redirection pour l'accès à 'animation'
 RewriteRule ^animations$ index.php?action=animations [L,QSA]
 
 # Redirection pour l'accès à 'animationDetails/id'
 RewriteRule ^animationsDetails/([0-9]+)$ index.php?action=animationsDetails&animationId=$1 [L,QSA]
+
+# Redirection pour l'accès à 'series'
+RewriteRule ^series$ index.php?action=series [L,QSA]
+
+# Redirection pour l'accès à 'series'
+RewriteRule ^seriesDetails/([0-9]+)$ index.php?action=seriesDetails&seriesId=$1 [L,QSA]
+
+
 
 # Redirection pour l'accès à 'register'
 RewriteRule ^register$ index.php?action=register [L,QSA]
@@ -32,3 +37,6 @@ RewriteRule ^logout$ index.php?action=logout [L,QSA]
 
 # Redirection pour l'accès à 'account'
 RewriteRule ^account$ index.php?action=account [L,QSA]
+
+# Redirection pour l'accès à 'account'
+RewriteRule ^accountModify$ index.php?action=accountModify[L,QSA]

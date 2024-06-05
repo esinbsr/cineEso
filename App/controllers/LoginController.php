@@ -16,7 +16,6 @@ class LoginController {
 
     // view
     public function loginForm() {
-
         $this->loginView->formLogin();
     }
 
@@ -34,10 +33,12 @@ class LoginController {
                 echo "Login successful!";
                 // Rediriger vers une page protégée ou le tableau de bord
                 header("Location: ?action=dashboard");
-                exit();
+                exit('exit');
             } else {
                 // Connexion échouée
                 echo "Invalid email or password.";
+                echo '<a href="login">Try again</a>';
+
             }
         } else {
             echo "Email and Password are required.";
@@ -47,7 +48,7 @@ class LoginController {
     public function logout() {
         session_unset();
         session_destroy();
-        header("Location: ?action=login");
+        header("Location: login");
         exit();
     }
 }

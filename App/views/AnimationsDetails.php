@@ -7,7 +7,8 @@ class AnimationsDetails {
     public function animationsDetailsForm($data) {
 
         echo '
-        <h2>Animations details details</h2>
+        <h2 class="h2-center">Animations details</h2>
+        <div class="table">
         <table>
             <thead>
                 <tr>
@@ -27,22 +28,21 @@ class AnimationsDetails {
 
                 foreach($data as $animations) {
 
-                    echo ' <tr>';
-                   echo ' <td>' . $animations['title'] . '</td>';
-                   echo ' <td>' . $animations['theme'] . '</td>';
-                   echo ' <td>' . $animations['release_date'] . '</td>';
-                   echo ' <td>' . $animations['description'] . '</td>';
-                   echo ' <td>' . $animations['studio'] . '</td>';
-                   echo ' <td>' . $animations['author'] . '</td>';
-                   echo ' <td>' . $animations['country'] . '</td>';
-                   echo ' <td>' . '<a href="animations">Back</a>' . '</td>';
-                }
-
                 echo '
+                <tr>
+                   <td> ' . $animations['title'] . '</td>
+                   <td> ' . $animations['theme'] . '</td>
+                   <td> ' . $animations['release_date'] . '</td>
+                   <td> ' . $animations['description'] . '</td>
+                   <td> ' . $animations['studio'] . '</td>
+                   <td> ' . $animations['author'] . '</td>
+                   <td> ' . $animations['country'] . '</td>
+                   <td><a href="animations">Back</a></td>
                 </tr>
             </tbody>
         </table>
-        ';
+        </div>';
+    }
         
     }
 }
